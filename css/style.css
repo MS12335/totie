@@ -1,0 +1,643 @@
+:root {
+    --primary: #000;
+    --secondary: #E5C0B8;
+    --background_color: #fff;
+    --background_button: #F9A997;
+    --background_product: #F6E2FF;
+    --background_benefits: #F0CFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background_color);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6%;
+    background-color: var(--background_color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar.scroll {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar .navbar-logo img {
+    width: 10rem;
+}
+
+.navbar .navbar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .navbar-nav a {
+    color: var(--primary);
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 1.5rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--secondary);
+}
+
+.navbar #hamburger-menu {
+    display: none;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    min-height: 100vh;
+    padding: 4rem 6%;
+    padding-top: 10rem;
+}
+
+.hero .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.hero .content h1 {
+    color: var(--secondary);
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+.hero .content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.hero .content p{
+    color: var(--primary);
+    font-size: 1.7rem;
+    padding-bottom: 5rem;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.hero .content .tablet-view {
+    display: none;
+}
+
+.hero .content a {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: var(--background_button);
+    padding: 1.2rem 6rem;
+    border-radius: 0.5rem;
+}
+
+.hero .content a:hover,
+.produk .content .keterangan a:hover,
+.pesan .content form button:hover {
+    color: var(--secondary);
+    background-color: var(--background);
+    border: 3px solid var(--background_button);
+    font-weight: 500;
+}
+
+.hero .image {
+    width: 40%;
+    text-align: center;
+}
+
+.hero .image img {
+    width: 85%;
+}
+
+/* Tentang Kami */
+.tentang-kami,
+.produk,
+.keunggulan-produk,
+.pesan {
+    padding: 5rem 6% 4rem;
+}
+
+.tentang-kami .judul,
+.produk .judul,
+.keunggulan-produk .judul,
+.pesan .judul {
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.tentang-kami .judul h2,
+.produk .judul h2,
+.keunggulan-produk .judul h2,
+.pesan .judul h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.tentang-kami .judul p,
+.produk .judul p,
+.keunggulan-produk .judul p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.tentang-kami .content,
+.produk .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+}
+
+.tentang-kami .content .image,
+.produk .content .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    height: 40rem;
+    border-radius: 0.5rem;
+}
+
+.tentang-kami .content .image img {
+    width: 60%;
+}
+
+.tentang-kami .content .keterangan {
+    display: block;
+}
+
+.tentang-kami .content .keterangan h2,
+.produk .content .keterangan h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+
+.tentang-kami .content .keterangan p,
+.produk .content .keterangan p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 2;
+    padding-bottom: 2rem;
+}
+
+.tentang-kami .content .keterangan p span {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Produk */
+.produk .content .image img {
+    width: 50%;
+}
+
+.produk .content .image {
+    height: 40rem;
+    background-color: var(--background_product);
+}
+
+.produk .content .keterangan h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding-bottom: 5rem;
+}
+
+.produk .content .keterangan a {
+    display: inline-block;
+    background-color: var(--background_button);
+    color: var(--primary);
+    padding: 1.5rem 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Keunggulan Produk */
+.keunggulan-produk .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    padding: 0 6rem;
+}
+
+.keunggulan-produk .content .card {
+    display: block;
+    background-color: var(--background_benefits);
+    padding: 3rem;
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+}
+
+.keunggulan-produk .content .card img {
+    height: 12rem;
+    padding-bottom: 2rem;
+}
+
+.keunggulan-produk .content .card .keterangan h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1.2rem;
+}
+
+.keunggulan-produk .content .card .keterangan p {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* Pesan */
+.pesan .judul h2 {
+    font-weight: 500;
+}
+
+.pesan .content form {
+    padding: 0 5rem;
+}
+
+.pesan .content form .field {
+    margin-bottom: 2rem;
+}
+
+.pesan .content form .field h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.pesan .content form .field input {
+    width: 100%;
+    height: 4rem;
+    padding: 1.2rem;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+    background-color: var(--background_color);
+    border: 1px solid var(--primary);
+}
+
+.pesan .content form button {
+    margin-top: 2rem;
+    width: 100%;
+    height: 6rem;
+    font-size: 2rem;
+    color: var(--primary);
+    background-color: var(--background_button);
+    border-radius: 0.5rem;
+}
+
+/* Footer */
+footer {
+    border-top: 2px solid var(--primary);
+    width: 100%;
+    color: var(--primary);
+    margin-top: 5rem;
+    padding: 2rem 6% ;
+    text-align: left;
+    background-color: var(--background);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+}
+
+footer .container .description {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .container .description.pt {
+    padding-top: 0.5rem;
+}
+
+footer .container .description .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.3rem;
+    padding-bottom: 1.5rem;
+}
+
+footer .container .description .logo img {
+    width: 12rem;
+}
+
+footer .container .description h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+footer .container .description p,
+footer .container .description.menu a {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2;
+    color: var(--primary);
+}
+
+footer .container .description.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .container .description.menu a {
+    padding-bottom: 2rem;
+}
+
+footer .container .description.pt.hubungi {
+    padding-left: 25%;
+}
+
+footer .container .description.menu.pt {
+    padding-left: 35%;
+}
+
+footer .container .description.pt .socials a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+footer .container .description.pt .socials img {
+    height: 3rem;
+}
+
+footer .container .description.pt .socials p {
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+footer .container .description.menu a:hover,
+footer .container .description.pt .socials p:hover {
+    color: var(--secondary);
+}
+
+/* Copyright */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 1.2rem;
+    color: var(--primary);
+    background-color: var(--background_benefits);
+    height: 6rem;
+    font-size: 2rem;
+}
+
+/* Media Querries */
+@media (max-width: 1669px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 1636px) {
+    footer .container .description.pt.hubungi {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1600px) {
+    html {
+        font-size: 85%;
+    }
+
+    footer .container .description.pt.hubungi {
+        padding-left: 25%;
+    }
+}
+
+@media (max-width: 1500px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1563px) {
+    footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+}
+
+@media (max-width: 1400px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 1350px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 1270px) {
+    html {
+        font-size: 65%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar .navbar-logo img {
+        width: 15rem;
+    }
+
+    .navbar .navbar-logo a {
+        font-size: 3rem;
+    }
+
+    .navbar #hamburger-menu {
+        color: var(--primary);
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--background_color);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--primary);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 3rem;
+    } 
+
+    .hero {
+        min-height: 95vh;
+        padding-top: 12rem;
+        padding-bottom: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero .desktop-view {
+        display: none;
+    }
+
+    .hero .content .tablet-view {
+        display: inline-block;
+        width: 60%;
+    }
+
+    .hero .content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero .content p {
+        padding-bottom: 1rem;
+    }
+
+    .hero .content img {
+        padding-bottom: 5rem;
+    }
+
+    .hero .content a {
+        width: 70%;
+        padding: 2rem 0;
+        height: 7rem;
+    }
+
+    .keunggulan-produk .content {
+        padding: 0;
+    }
+
+    .pesan .content form {
+        padding: 0;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer .container .description.menu {
+        padding: 0;
+        justify-self: center;
+    }
+
+    footer .container .description.pt.hubungi {
+        padding: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 863px) {
+    .produk .content .keterangan a {
+        text-align: center;
+        width: 100%;
+    }
+
+    .produk .content .image img {
+        width: 45%;
+    }
+
+    .tentang-kami .content,
+    .produk .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    footer .container .description.pt .socials img {
+        height: 4rem;
+    }
+
+    footer .container .description .logo img {
+        width: 15rem;
+    }
+
+    footer .container .description h2 {
+        font-size: 3rem;
+    }
+
+    footer .container .description p, 
+    footer .container .description.menu a,
+    footer .container .description.pt .socials p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 668px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 655px) {
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+
+    footer .container .description.menu.pt {
+        padding: 0;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 463px) {
+    .pesan .judul h2 br {
+        display: none;
+    }
+}
